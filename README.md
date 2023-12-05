@@ -4,8 +4,9 @@
   <br>
 </h1>
 
-<h2 align="center">Microservice that serves knowledge graphs based on search term</h2>
+<h2 align="center">Microservice that serves Large Language Models via a REST API on the lab server.</h2>
 
+<h2> Ignore the documentation for now </h2>
 <h1 align="center"><a href="https://harishsiravuri.github.io/litgraph/">litgraph Documentation</h1>
 
 <p align="center">
