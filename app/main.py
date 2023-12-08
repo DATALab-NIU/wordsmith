@@ -1,5 +1,7 @@
 import os
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from prometheus_fastapi_instrumentator import Instrumentator
 from app.api.routes.router import api_router
 from app.core import event_handlers
 from app.core.config import Config
@@ -17,6 +19,10 @@ def get_app() -> FastAPI:
 
 
 app = get_app()
+
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+
+Instrumentator().instrument(app).expose(app)
 
 
 @app.on_event("startup")
